@@ -1,0 +1,42 @@
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="origin">
+            <mat-header-cell *matHeaderCellDef> Origin </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.origin}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="destination">
+            <mat-header-cell *matHeaderCellDef> Destination </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.destination}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
+
+<!-- <table style="width:100%">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Trip</th>
+        <th>Commodity</th>
+    </tr>
+    <tr *ngFor="let item of list">
+        <td>{{item.contact.name}}</td>
+        <td>{{item.contact.email}}</td>
+        <td><span *ngFor="let loc of item.location">{{loc.origin}}-{{loc.destination}}</span></td>
+        <td>{{item.shipment.commodity}}</td>
+    </tr>
+</table> -->

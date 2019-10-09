@@ -1,0 +1,180 @@
+<mat-card>
+        <mat-card-title>Lane Information</mat-card-title>
+        <mat-card-content>
+            <div>
+                <p>
+                    <span>ORIGIN</span>
+                    <mat-form-field class="example-full-width">
+                        <input formControlName="origin" type="text" placeholder="origin" aria-label="Number"
+                            matInput [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of options" [value]="option.city">
+                                {{option.city}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="originZip" formControlName="originZip"
+                            required>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <span>APPOINTMENT</span>
+                    <mat-form-field>
+                        <input formControlName="pickup" matInput [matDatepicker]="picker"
+                            placeholder="Pickup">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <span>STOP REQUIREMENTS</span><br><br>
+                    <mat-radio-group formControlName="originRequirement">
+                        <mat-radio-button *ngFor="let item of requirements" value="{{item}}">{{item}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </p>
+                <p>
+                    <span>NOTE</span>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="Special Instruction or Notes"
+                            formControlName="originNote">
+                    </mat-form-field>
+                </p>
+
+                <p>
+                    <span>DESTINATION</span>
+                    <mat-form-field class="example-full-width">
+                        <input formControlName="origin" type="text" placeholder="destination"
+                            aria-label="Number" matInput [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of options" [value]="option.city">
+                                {{option.city}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="Zip" formControlName="destinationzip"
+                            required>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <span>APPOINTMENT</span>
+                    <mat-form-field>
+                        <input formControlName="delivery" matInput [matDatepicker]="pickerTo"
+                            placeholder="Delivery">
+                        <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerTo></mat-datepicker>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <span>STOP REQUIREMENTS</span><br><br>
+                    <mat-radio-group formControlName="destinationRequirement">
+                        <mat-radio-button *ngFor="let item of requirements" value="{{item}}">{{item}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </p>
+                <p>
+                    <span>NOTE</span>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="Special Instruction or Notes"
+                            formControlName="destinationNote">
+                    </mat-form-field>
+                </p>
+
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+
+
+<!-- <mat-card>
+    <mat-card-title>Lane Information</mat-card-title>
+    <mat-card-content>
+        <div>
+            <p>
+                <span>ORIGIN</span>
+                <mat-form-field class="example-full-width">
+                    <input formControlName="origin" type="text" placeholder="origin" aria-label="Number" matInput
+                        [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of options" [value]="option.city">
+                            {{option.city}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="originZip" formControlName="originZip" required>
+                </mat-form-field>
+            </p>
+            <p>
+                <span>APPOINTMENT</span>
+                <mat-form-field>
+                    <input formControlName="pickup" matInput [matDatepicker]="picker" placeholder="Pickup">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </p>
+            <p>
+                <span>STOP REQUIREMENTS</span><br><br>
+                <mat-radio-group formControlName="originRequirement">
+                    <mat-radio-button *ngFor="let item of requirements" value="{{item}}">{{item}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </p>
+            <p>
+                <span>NOTE</span>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Special Instruction or Notes" formControlName="originNote">
+                </mat-form-field>
+            </p>
+
+            <p>
+                <span>DESTINATION</span>
+                <mat-form-field class="example-full-width">
+                    <input formControlName="origin" type="text" placeholder="destination" aria-label="Number" matInput
+                        [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of options" [value]="option.city">
+                            {{option.city}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Zip" formControlName="destinationzip" required>
+                </mat-form-field>
+            </p>
+            <p>
+                <span>APPOINTMENT</span>
+                <mat-form-field>
+                    <input formControlName="delivery" matInput [matDatepicker]="pickerTo" placeholder="Delivery">
+                    <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerTo></mat-datepicker>
+                </mat-form-field>
+            </p>
+            <p>
+                <span>STOP REQUIREMENTS</span><br><br>
+                <mat-radio-group formControlName="destinationRequirement">
+                    <mat-radio-button *ngFor="let item of requirements" value="{{item}}">{{item}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </p>
+            <p>
+                <span>NOTE</span>
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Special Instruction or Notes"
+                        formControlName="destinationNote">
+                </mat-form-field>
+            </p>
+
+        </div>
+    </mat-card-content>
+</mat-card> -->

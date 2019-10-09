@@ -1,0 +1,22 @@
+<mat-card class="contact-card">
+    <mat-card-title>Contact Information</mat-card-title>
+    <mat-card-content class="contact-content">
+        <div [formGroup]="contact">
+            <p>
+            <mat-form-field>
+                <input type="text" matInput placeholder="name" formControlName="name" required>
+            </mat-form-field>
+            </p>
+            <p>
+            <mat-form-field>
+                <input type="text" matInput placeholder="email" formControlName="email" required>
+            </mat-form-field>
+            </p>
+            <p>
+            <mat-form-field>
+                <input type="text" matInput placeholder="mobile" formControlName="mobile" required>
+            </mat-form-field>
+            </p>
+        </div>
+    </mat-card-content>
+</mat-card>

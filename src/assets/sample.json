@@ -1,0 +1,92 @@
+[
+    {
+        "contact": {
+            "name": "Balu",
+            "email": "balu@infosys.com",
+            "mobile": "1243423423"
+        },
+        "shipment": {
+            "commodity": "commodity1",
+            "equipment": "Dry van",
+            "equipmentSize": "3"
+        },
+        "location": [
+            {
+                "origin": "Paris",
+                "pickup": "",
+                "originNote": "sample note",
+                "originZip": "865",
+                "originRequirement": "",
+                "destination": "Leon",
+                "destinationzip": "245",
+                "delivery": "",
+                "destinationNote": "",
+                "destinationRequirement": ""
+            },
+            {
+                "origin": "Leon",
+                "pickup": "",
+                "originNote": "sample note",
+                "originZip": "865",
+                "originRequirement": "",
+                "destination": "Spain",
+                "destinationzip": "245",
+                "delivery": "",
+                "destinationNote": "",
+                "destinationRequirement": ""
+            }
+        ]
+    },
+    {
+        "contact": {
+            "name": "mark",
+            "email": "mark@infosys.com",
+            "mobile": "465765756"
+        },
+        "shipment": {
+            "commodity": "Commodity2",
+            "equipment": "Dry van",
+            "equipmentSize": ""
+        },
+        "location": [
+            {
+                "origin": "Norway",
+                "pickup": "",
+                "originNote": "",
+                "originZip": "245",
+                "originRequirement": "",
+                "destination": "Poland",
+                "destinationzip": "63",
+                "delivery": "",
+                "destinationNote": "",
+                "destinationRequirement": ""
+            }
+        ]
+    },
+    {
+        "contact": {
+            "name": "John",
+            "email": "john@infosys.com",
+            "mobile": "9812"
+        },
+        "shipment": {
+            "commodity": "commodity3",
+            "equipment": "Dry van",
+            "equipmentSize": ""
+        },
+        "location": [
+            {
+                "origin": "Spain",
+                "pickup": "",
+                "originNote": "",
+                "originZip": "4543",
+                "originRequirement": "",
+                "destination": "Romania",
+                "destinationzip": "6543",
+                "delivery": "",
+                "destinationNote": "",
+                "destinationRequirement": ""
+            }
+        ]
+    }
+]

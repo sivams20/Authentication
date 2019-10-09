@@ -1,0 +1,35 @@
+<mat-card class="">
+    <mat-card-title>Shipment Information</mat-card-title>
+    <mat-card-content>
+        <div [formGroup]="shipment">
+            <div>
+                <p>
+                    <span>EQIPMENTS</span>
+                </p>
+                <mat-radio-group formControlName="equipment">
+                    <mat-radio-button *ngFor="let item of equipments" value="{{item}}">{{item}}</mat-radio-button>
+                </mat-radio-group>
+
+                <mat-form-field>
+                    <mat-label>EQUIPMENT SIZE</mat-label>
+                    <select matNativeControl formControlName="equipmentSize">
+                        <option *ngFor="let equipment of equipmentSizes" [value]="equipment">
+                            {{equipment}}
+                        </option>
+                    </select>
+                </mat-form-field>
+            </div>
+            <p>
+                <mat-form-field class="example-full-width">
+                    <input formControlName="commodity" type="text" placeholder="commodity" aria-label="Number" matInput
+                        [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of options" [value]="option.city">
+                            {{option.city}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </p>
+        </div>
+    </mat-card-content>
+</mat-card>

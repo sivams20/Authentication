@@ -1,0 +1,11 @@
+.order-form{
+    margin: 32px auto;
+    padding: 0 16px;
+    max-width: 960px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+.lane-form{
+    margin-top: 10px; 
+}
