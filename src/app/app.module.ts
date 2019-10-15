@@ -17,13 +17,12 @@ import { ContactComponent } from './order/contact/contact.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { BackendInterceptor } from './_helpers/backend';
+import { BackendInterceptor, JwtInterceptor } from './_helpers';
 
 import { MaterialModule } from './material.module';
 import { ShipmentComponent } from './order/shipment/shipment.component';
 import { LaneComponent } from './order/lane/lane.component';
 import { MatDatepickerModule } from '@angular/material';
-
 
 @NgModule({
   declarations: [
@@ -47,7 +46,8 @@ import { MatDatepickerModule } from '@angular/material';
     MaterialModule
   ],
   providers: [MatDatepickerModule,
-    { provide: HTTP_INTERCEPTORS, useClass: BackendInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: BackendInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

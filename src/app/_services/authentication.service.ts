@@ -14,6 +14,10 @@ export class AuthenticationService{
         this.currentUser = this.currentUserSubject.asObservable();
     }
 
+        public get currentUserValue(): User {
+        return this.currentUserSubject.value;
+    }
+
     login(username: string, password: string){
         return this.http.post<User>('http://localhost:4200/users/authenticate',{ username, password })
         .pipe(map(user => {
