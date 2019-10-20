@@ -21,6 +21,7 @@ export class ListComponent implements OnInit {
   ngOnInit() {
 	  this.listService.fetchList().subscribe(
       data => { 
+        console.log(data);
         this.list = data;
         this.listService.savedData.subscribe(
           result => { 

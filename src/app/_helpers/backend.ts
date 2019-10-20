@@ -25,9 +25,9 @@ export class BackendInterceptor implements HttpInterceptor {
                      return authenticate();
             //     case url.endsWith('/users') && method === 'GET':
             //         return getUsers();
-            //     default:
-            //         // pass through any requests not handled above
-            //         return next.handle(request);
+                default:
+                    // pass through any requests not handled above
+                    return next.handle(request);
              }    
         }
 

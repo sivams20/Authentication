@@ -24,6 +24,8 @@ import { ShipmentComponent } from './order/shipment/shipment.component';
 import { LaneComponent } from './order/lane/lane.component';
 import { MatDatepickerModule } from '@angular/material';
 
+import { FlexLayoutModule } from "@angular/flex-layout";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,11 +45,12 @@ import { MatDatepickerModule } from '@angular/material';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [MatDatepickerModule,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: BackendInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: BackendInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
