@@ -10,7 +10,8 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'order', component: OrderComponent},
   { path: 'load', loadChildren: () => import('./loadboard/loadboard.module').then(m => m.LoadboardModule) },
-  { path: 'board', loadChildren: () => import('./board/board.module').then(m => m.BoardModule) }
+  { path: 'board', loadChildren: () => import('./board/board.module').then(m => m.BoardModule) },
+  { path: 'registration', loadChildren: () => import('./registration/registration.module').then(m => m.RegistrationModule) }
 ];
 
 @NgModule({
