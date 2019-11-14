@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-address-info',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./address-info.component.css']
 })
 export class AddressInfoComponent implements OnInit {
+  @Input() address: FormGroup;
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.address);
   }
 
 }

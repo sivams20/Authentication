@@ -1,1 +1,11 @@
-<p>personal-info works!</p>
+<div [formGroup]="personal">
+    <mat-form-field>
+        <input type="text" matInput placeholder="Name" formControlName="name" required>
+    </mat-form-field>
+    <mat-form-field>
+        <input type="text" matInput placeholder="Email" formControlName="email" required>
+    </mat-form-field>
+    <mat-form-field>
+        <input type="text" matInput placeholder="Mobile" formControlName="mobile" required>
+    </mat-form-field>
+</div>

@@ -1,1 +1,32 @@
-<p>address-info works!</p>
+<div [formGroup]="address">
+    <mat-form-field>
+        <input type="text" matInput placeholder="housenumber" formControlName="housenumber" required>
+    </mat-form-field>
+    <mat-form-field>
+        <input type="text" matInput placeholder="location" formControlName="location" required>
+    </mat-form-field>
+    <mat-form-field>
+        <input type="text" matInput placeholder="pin" formControlName="pin" required>
+    </mat-form-field>
+    <mat-form-field>
+        <input type="text" matInput placeholder="street" formControlName="street" required>
+    </mat-form-field>
+</div>
+<!-- <div [formGroup]="address">
+    <div formArrayName="address">
+        <div *ngFor="let item of address.value; let i = index" [formGroupName]="i">
+            <mat-form-field>
+                <input type="text" matInput placeholder="housenumber" formControlName="housenumber" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="text" matInput placeholder="location" formControlName="location" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="text" matInput placeholder="pin" formControlName="pin" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input type="text" matInput placeholder="street" formControlName="street" required>
+            </mat-form-field>
+        </div>
+    </div>
+</div> -->

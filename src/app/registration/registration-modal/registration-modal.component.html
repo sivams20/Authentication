@@ -1,15 +1,37 @@
-<h2 mat-dialog-title>{{data.title}}</h2>
+<form class="registrationForm-form" [formGroup]="registrationForm">
+    <h2 mat-dialog-title>{{data.title}}</h2>
 
-<mat-dialog-content>
-  
-    <mat-form-field>
-        <input matInput
-                placeholder="Course Description">
-    </mat-form-field>
- 
-</mat-dialog-content>
+    <mat-dialog-content>
+        <app-personal-info [personal]="registrationForm.controls.personal"></app-personal-info>
+        <div formArrayName="address">
+            <div *ngFor="let addressCtrl of registrationForm.controls.address.controls; let i=index">
+                <app-address-info [address]="addressCtrl"></app-address-info>
+            </div>
+            <button (click)="addAddress()">Add Address</button>
+        </div>
+        <!-- <app-address-info [address]="registrationForm.controls.address"></app-address-info> -->
+        <!-- <div [formGroup]="address">
+                <div formArrayName="address">
+                    <div *ngFor="let item of registrationForm.controls.address; let i = index" [formGroupName]="i">
+                        <mat-form-field>
+                            <input type="text" matInput placeholder="housenumber" formControlName="housenumber" required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="text" matInput placeholder="location" formControlName="location" required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="text" matInput placeholder="pin" formControlName="pin" required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="text" matInput placeholder="street" formControlName="street" required>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div> -->
+    </mat-dialog-content>
 
-<mat-dialog-actions>
-    <button class="mat-raised-button"(click)="close()">Close</button>
-    <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
-</mat-dialog-actions>
+    <mat-dialog-actions>
+        <button class="mat-raised-button" (click)="close()">Close</button>
+        <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+    </mat-dialog-actions>
+</form>

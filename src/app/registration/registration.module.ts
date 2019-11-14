@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RegistrationRoutingModule } from './registration-routing.module';
 import { RegistrationComponent } from './registration.component';
@@ -16,6 +16,7 @@ import { AddressInfoComponent } from './address-info/address-info.component';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     RegistrationRoutingModule,
     MaterialModule,
     FlexLayoutModule
